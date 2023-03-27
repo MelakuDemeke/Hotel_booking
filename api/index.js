@@ -4,6 +4,10 @@ import mongoose from "mongoose"
 
 // Routes
 import authRoute from "./routes/auth.js"
+import hotelsRoute from "./routes/hotels.js"
+import roomsRoute from "./routes/rooms.js"
+import usersRoute from "./routes/users.js"
+
 
 const app = express()
 dotenv.config()
@@ -26,6 +30,9 @@ app.get("/", (req, res)=>{
 // Middlewares
 
 app.use("/auth", authRoute);
+app.use("/hotels",hotelsRoute);
+app.use("/rooms",roomsRoute);
+app.use("/users",usersRoute);
 
 app.listen(8100, ()=>{
     connect()
