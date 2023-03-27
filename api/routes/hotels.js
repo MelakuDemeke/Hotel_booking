@@ -2,8 +2,8 @@ import express from "express"
 
 const router = express.Router()
 
-router.get("/", (req,res) => {
-    res.send("this is hotels route")
-})
+//TODO add CRETATE UPDATE DELETE routes
+
+
 
 export default router
