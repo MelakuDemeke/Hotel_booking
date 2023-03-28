@@ -31,7 +31,7 @@ app.get("/", (req, res)=>{
 // Middlewares
 
 app.use("/auth", authRoute);
-app.use("/hotels",hotelsRoute);
+app.use("/api/hotels",hotelsRoute);
 app.use("/rooms",roomsRoute);
 app.use("/users",usersRoute);
 
