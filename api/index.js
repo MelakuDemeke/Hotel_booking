@@ -10,7 +10,6 @@ import usersRoute from "./routes/users.js"
 
 
 const app = express()
-app.use(express.json())
 dotenv.config()
 
 
@@ -29,11 +28,12 @@ app.get("/", (req, res)=>{
 })
 
 // Middlewares
+app.use(express.json())
 
-app.use("/auth", authRoute);
+app.use("/api/auth", authRoute);
 app.use("/api/hotels",hotelsRoute);
-app.use("/rooms",roomsRoute);
-app.use("/users",usersRoute);
+app.use("/api/rooms",roomsRoute);
+app.use("/api/users",usersRoute);
 
 app.listen(8100, ()=>{
     connect()
