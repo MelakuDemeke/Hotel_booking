@@ -10,6 +10,7 @@ import usersRoute from "./routes/users.js"
 
 
 const app = express()
+app.use(express.json())
 dotenv.config()
 
 
