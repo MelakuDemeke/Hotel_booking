@@ -40,7 +40,12 @@ app.use("/api/users",usersRoute);
 app.use((err, req, res, next)=>{
     const errorStatus = err.status || 500
     const errorMessage = err.message || "something went wrong"
-    res.status(errorStatus).json(errorMessage);
+    res.status(errorStatus).json({
+        sucess:false,
+        status:errorStatus,
+        message:errorMessage,
+        stack: err.stack
+    });
 });
 
 
