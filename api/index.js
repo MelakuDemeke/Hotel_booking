@@ -38,7 +38,9 @@ app.use("/api/users",usersRoute);
 // error handling middlewarea
 
 app.use((err, req, res, next)=>{
-    res.status(500).json(err);
+    const errorStatus = err.status || 500
+    const errorMessage = err.message || "something went wrong"
+    res.status(errorStatus).json(errorMessage);
 });
 
 
