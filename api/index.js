@@ -35,6 +35,13 @@ app.use("/api/hotels",hotelsRoute);
 app.use("/api/rooms",roomsRoute);
 app.use("/api/users",usersRoute);
 
+// error handling middlewarea
+
+app.use((err, req, res, next)=>{
+    res.status(500).json(err);
+});
+
+
 app.listen(8100, ()=>{
     connect()
     console.log("server started at http://localhost:8100")
